@@ -1,10 +1,11 @@
-import{ Component } from '@angular/core';
+import{ Component, Input } from '@angular/core';
+import { format } from 'url';
 
 @Component({
     selector : 'foto',
-    template : '<img src="/assets/images/cerveja.png" alt="cerveja e corrida" >'
-    //stylesUrls : ['./foto.component.css']
+    template : '<img [src]="url" [alt]="titulo" >'
 })
 export class FotoComponent{
-
+    @Input() url = "";
+    @Input() titulo = "";
 }
