@@ -8,7 +8,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent{
   title = 'Caelum Pic';
-  constructor( conexaoApi: HttpClient){
-
+  listaFotos
+  constructor( conexaoApi: HttpClient ){
+    conexaoApi.get('http://localhost:3000/v1/fotos')
+    .subscribe(
+        // Arrow Function
+        fotosApi => {
+            this.listaFotos = fotosApi
+        }    
+    )
   }
 }
