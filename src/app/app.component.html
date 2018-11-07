@@ -5,8 +5,9 @@
 </header>
 <main class="container">
   <div class="row">
-   <card></card>
-    <foto *ngFor="let foto of listaFotos" [url]="foto.url" [titulo]="foto.titulo"></foto>
+   <card *ngFor="let foto of listaFotos">
+     <foto [url]="foto.url" [titulo]="foto.titulo"></foto>
+   </card>
   
   </div>
 </main>
