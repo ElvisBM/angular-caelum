@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Foto } from "../foto/foto";
 @Injectable({
     providedIn: 'root'
 })
@@ -13,7 +14,9 @@ export class FotoService{
         return this.conexaoApi.get(this.url);
     }
 
-    cadastrar(){}
+    cadastrar(foto:Foto){
+        return this.conexaoApi.post(this.url, foto);
+    }
 
     editar(){}
 
