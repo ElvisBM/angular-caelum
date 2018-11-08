@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FotoService } from '../servicos/foto.service';
+import { Foto } from '../foto/foto';
 
 @Component({
   selector: 'caelumpic-listagem',
@@ -21,6 +22,10 @@ export class ListagemComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  excluir(foto:Foto){
+    console.log(`Apagar ${foto.titulo}`);
   }
 
 }
