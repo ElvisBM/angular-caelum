@@ -5,7 +5,11 @@
   </header>
   <main class="container">
     <div class="row">
-  
+      <div class="col-12">
+        <a routeLink="/cadastro" class="btn btn-primary">Nova Foto</a>
+      </div>
+    </div>
+    <div class="row">
      <card *ngFor="let foto of listaFotos" [dados]="foto" class="col-md-3 mb-4">
        <foto [url]="foto.url" [titulo]="foto.titulo"></foto>
      </card>
