@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Foto } from '../foto/foto';
 
 @Component({
   selector: 'caelumpic-cadastro',
@@ -7,11 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroComponent implements OnInit {
 
+  foto = new Foto();
+
   constructor() { }
 
   ngOnInit() {
   }
   salvar(){
-    console.log('clicou');
+    console.log(this.foto);
   }
 }
