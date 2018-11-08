@@ -11,6 +11,8 @@ import { ModuloRoteamento } from './app.routes';
 import { MenuComponent } from './menu/menu.component'; 
 import { FormsModule } from "@angular/forms";
 import { ReordenaComponent } from './reordena/reordena.component';
+//import { ReordenaModule } from './reordena/reordena.module';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ReordenaComponent } from './reordena/reordena.component';
     FotoModule,
     CardModule,
     ModuloRoteamento,
-    FormsModule  
+    FormsModule,
+    //ReordenaModule
+   DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
