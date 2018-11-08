@@ -8,8 +8,9 @@ import { CardModule } from './card/card.module';
 import { ListagemComponent } from './listagem/listagem.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ModuloRoteamento } from './app.routes';
-import { MenuComponent } from './menu/menu.component';
- 
+import { MenuComponent } from './menu/menu.component'; 
+import { FormsModule } from "@angular/forms";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { MenuComponent } from './menu/menu.component';
     HttpClientModule,
     FotoModule,
     CardModule,
-    ModuloRoteamento
+    ModuloRoteamento,
+    FormsModule  
   ],
   providers: [],
   bootstrap: [AppComponent]

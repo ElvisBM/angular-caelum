@@ -11,5 +11,7 @@ export class CadastroComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  salvar(){
+    console.log('clicou');
+  }
 }
