@@ -1,3 +1,7 @@
-<p>
-  reordena works!
-</p>
+<div class="container">
+	<cdk-drop (dropped)="onDrop($event)" class="list-group">
+		<li class="list-group-item" *ngFor="let foto of listaFotos" cdkDrag>
+			<img src="{{ foto.url }}" class="img-thumbnail" > {{ foto.titulo }}
+		</li>
+	</cdk-drop>
+</div>
