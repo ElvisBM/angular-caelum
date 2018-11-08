@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { moveItemInArray, CdkDragDrop } from '@angular/cdk/drag-drop';
+import { FotoService } from '../servicos/foto.service';
 
 @Component({
   selector: 'caelumpic-reordena',
@@ -9,8 +9,8 @@ import { moveItemInArray, CdkDragDrop } from '@angular/cdk/drag-drop';
 })
 export class ReordenaComponent implements OnInit {
   listaFotos
-  constructor( conexaoApi: HttpClient ){
-    conexaoApi.get('http://localhost:3000/v1/fotos')
+  constructor( private fotoService:FotoService ){
+    this.fotoService.listar()
     .subscribe(
         // Arrow Function
         fotosApi => {
