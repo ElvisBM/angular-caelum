@@ -18,9 +18,11 @@ export class FotoService{
         return this.conexaoApi.post(this.url, foto);
     }
 
-    editar(){}
+    deletar(foto:Foto){
+        return this.conexaoApi.delete(this.url+foto._id);
+    }
 
-    deletar(){}
+    editar(){}
 
     buscar(){}
 }

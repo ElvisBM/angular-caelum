@@ -24,8 +24,13 @@ export class ListagemComponent implements OnInit {
   ngOnInit() {
   }
 
-  excluir(foto:Foto){
-    console.log(`Apagar ${foto.titulo}`);
+  excluir(fotoApagada:Foto){
+    console.log(`Apagar ${fotoApagada.titulo}`);
+    this.fotoService.deletar(fotoApagada).subscribe(
+      ()=>{
+         console.log('apagou');
+      }
+    );
   }
 
 }
