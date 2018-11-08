@@ -10,13 +10,15 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { ModuloRoteamento } from './app.routes';
 import { MenuComponent } from './menu/menu.component'; 
 import { FormsModule } from "@angular/forms";
+import { ReordenaComponent } from './reordena/reordena.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListagemComponent,
     CadastroComponent,
-    MenuComponent
+    MenuComponent,
+    ReordenaComponent
   ],
   imports: [
     BrowserModule,
