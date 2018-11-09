@@ -37,15 +37,23 @@ export class CadastroComponent implements OnInit {
 
 	salvar(){
 		console.log(this.foto);
-		this.fotoService
-		.cadastrar(this.foto)
-		.subscribe(
-			(resposta)=>{
-				console.log(resposta);
-				this.roteador.navigate([]);
-			},
-			erro => console.log(erro),
-			()=> console.log('completou')   
-		)
+		if(this.foto._id){
+			this.fotoService
+			.editar(this.foto)
+			.subscribe(
+				resposta => this.roteador.navigate([''])
+			)
+		}else{
+			this.fotoService
+			.cadastrar(this.foto)
+			.subscribe(
+				(resposta)=>{
+					console.log(resposta);
+					this.roteador.navigate([]);
+				},
+				erro => console.log(erro),
+				()=> console.log('completou')   
+			)
+		}
 	}
 }
