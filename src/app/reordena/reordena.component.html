@@ -1,4 +1,5 @@
 <div class="container">
+	<button (click)="salvarOrdem()" class="btn btn-primary">Salvar Ordem</button>
 	<cdk-drop (dropped)="onDrop($event)" class="list-group">
 		<li class="list-group-item" *ngFor="let foto of listaFotos" cdkDrag>
 			<img src="{{ foto.url }}" class="img-thumbnail" > {{ foto.titulo }}
