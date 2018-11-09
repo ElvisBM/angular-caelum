@@ -10,8 +10,10 @@
       </div>
     </div>
     <div class="row">
-     <card *ngFor="let foto of listaFotos" [dados]="foto" class="col-md-3 mb-4">
-       <foto [url]="foto.url" [titulo]="foto.titulo"></foto>
+      <card *ngFor="let foto of listaFotos" [dados]="foto" class="col-md-3 mb-4">
+        <a [routerLink]="['/editar', foto._id]" class="foto">
+          <foto [url]="foto.url" [titulo]="foto.titulo"></foto>
+        </a>
        <button (click)="excluir(foto)" class="btn btn-danger">Apagar</button>
      </card>
     

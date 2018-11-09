@@ -6,6 +6,7 @@ import { ReordenaComponent } from './reordena/reordena.component';
 const rotasApp:Routes =[
     {path:'', component: ListagemComponent},
     {path:'cadastro', component: CadastroComponent },
+    {path:'editar/:fotoId', component: CadastroComponent },
     {path:'reordena', component: ReordenaComponent},
     {path: '**', redirectTo: ''}
 ]
