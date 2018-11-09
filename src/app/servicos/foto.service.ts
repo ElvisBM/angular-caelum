@@ -17,7 +17,7 @@ export class FotoService{
     }
 
     cadastrar(foto:Foto):Observable<Object>{
-        return this.conexaoApi.post(this.url, foto);
+        return this.conexaoApi.post(this.url, foto, {observe: 'response'});
     }
 
     deletar(foto:Foto):Observable<Object>{
