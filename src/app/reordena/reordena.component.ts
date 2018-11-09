@@ -28,16 +28,13 @@ export class ReordenaComponent implements OnInit {
 	salvarOrdem(){
 		console.log(this.listaFotos);
 		this.fotoService
-				.reordenar(this.listaFotos)
-				.subscribe(
-					(resposta)=>{
-						console.log(resposta);
-					},
-					erro => console.log(erro),
-					()=> console.log('completou')   
-				)
-			}
-		}
-	}
-
+		.reordenar(this.listaFotos)
+		.subscribe(
+			(resposta)=>{
+				console.log(resposta);
+			},
+			erro => console.log(erro),
+			()=> console.log('completou')   
+		)
+	}	
 }
