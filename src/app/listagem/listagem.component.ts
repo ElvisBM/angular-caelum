@@ -10,7 +10,7 @@ import { Foto } from '../foto/foto';
 export class ListagemComponent implements OnInit {
 
   title = 'Caelum Pic Listagem';
-  listaFotos
+  listaFotos: Foto [] = [];
   constructor( private fotoService: FotoService ){
     this.fotoService.listar()
     .subscribe(
@@ -29,6 +29,7 @@ export class ListagemComponent implements OnInit {
     this.fotoService.deletar(fotoApagada).subscribe(
       ()=>{
          console.log('apagou');
+         this.listaFotos.remove(fotoApagada._id);
       }
     );
   }
