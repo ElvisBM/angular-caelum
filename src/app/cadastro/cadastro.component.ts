@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Foto } from '../foto/foto';
 import { FotoService } from '../servicos/foto.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
 	selector: 'caelumpic-cadastro',
@@ -11,12 +12,28 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class CadastroComponent implements OnInit {
 
 	foto = new Foto();
+	
+	formCadastro: FormGroup
+	titulo = new FormControl('', Validators.compose([
+													Validators.required, 
+													Validators.minLength(2)
+												]));
+	url = new FormControl('', Validators.required);
 
 	constructor(private fotoService: FotoService,
 							private roteador: Router,
-							private rotaAtiva: ActivatedRoute){ }
+							private rotaAtiva: ActivatedRoute,
+							private formBuilder: FormBuilder){ }
 
 	ngOnInit() {
+
+		this.formCadastro = this.formBuilder.group({
+			titulo: this.titulo,
+			url: this.url,
+			descricao: 'tesadas',
+		})
+
+
 		/*
 		this.rotaAtiva.params.subscribe(
 			parametros => {
