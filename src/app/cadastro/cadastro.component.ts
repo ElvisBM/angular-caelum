@@ -34,6 +34,8 @@ export class CadastroComponent implements OnInit {
 		})
 
 
+
+
 		/*
 		this.rotaAtiva.params.subscribe(
 			parametros => {
@@ -47,6 +49,7 @@ export class CadastroComponent implements OnInit {
 				resposta => {
 					console.log(resposta);
 					this.foto = resposta;
+					this.formCadastro.patchValue(resposta);
 				}
 			);
 		}
@@ -54,6 +57,9 @@ export class CadastroComponent implements OnInit {
 
 	salvar(){
 		console.log(this.foto);
+		//Juntar dois objetos//Spread Operator
+		this.foto = {...this.foto, ...this.formCadastro.value};
+
 		if(this.foto._id){
 			this.fotoService
 			.editar(this.foto)
