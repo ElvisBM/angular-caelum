@@ -7,8 +7,8 @@ import { Observable } from "rxjs";
 })
 
 export class FotoService{
-    private url = 'http://localhost:49279/v1/fotos/';
-    private urlReorder = 'http://localhost:49279/v1/fotosreorder/';
+    private url = 'http://localhost:62802/v1/fotos/';
+    private urlReorder = 'http://localhost:62802/v1/fotosreorder/';
 
     constructor(private conexaoApi: HttpClient){}
 
