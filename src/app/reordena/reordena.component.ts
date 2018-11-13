@@ -36,8 +36,5 @@ export class ReordenaComponent implements OnInit {
 					erro => console.log(erro),
 					()=> console.log('completou')   
 				)
-			}
-		}
-	}
-
+	}	
 }
