@@ -9,7 +9,7 @@ import { ListagemComponent } from './listagem/listagem.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ModuloRoteamento } from './app.routes';
 import { MenuComponent } from './menu/menu.component'; 
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ReordenaComponent } from './reordena/reordena.component';
 //import { ReordenaModule } from './reordena/reordena.module';
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -30,7 +30,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     ModuloRoteamento,
     FormsModule,
     //ReordenaModule
-   DragDropModule
+   DragDropModule,
+   ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

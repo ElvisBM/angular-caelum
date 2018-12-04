@@ -7,9 +7,8 @@ import { Observable } from "rxjs";
 })
 
 export class FotoService{
-    private url = 'http://localhost:62802/v1/fotos/';
-    private urlReorder = 'http://localhost:62802/v1/fotosreorder/';
-
+    private url = 'http://localhost:60499/v1/fotos/';
+    private urlReorder = 'http://localhost:60499/v1/fotosreorder/';
     constructor(private conexaoApi: HttpClient){}
 
     listar():Observable<Foto[]>{
@@ -17,11 +16,18 @@ export class FotoService{
     }
 
     cadastrar(foto:Foto):Observable<Object>{
-        return this.conexaoApi.post(this.url, foto);
+        return this.conexaoApi.post(this.url, foto, {observe: 'response'});
     }
 
     deletar(foto:Foto):Observable<Object>{
         return this.conexaoApi.delete(this.url+foto._id);
+    }
+    editar(foto: Foto){
+        return this.conexaoApi.put(this.url+foto._id, foto);
+    }
+
+    buscar(fotoId : string):Observable<Foto>{
+        return this.conexaoApi.get<Foto>(this.url+fotoId);
     }
 
     reordenar(fotos:Foto){
@@ -29,11 +35,6 @@ export class FotoService{
     }
 
     listaReordenar():Observable<Foto[]>{
-        return this.conexaoApi.get<Foto[]>(this.urlReorder);
+        return this.conexaoApi.get<Foto[]>(this.url);
     }
-
-
-    editar(){}
-
-    buscar(){}
 }
